@@ -25,6 +25,16 @@
 img {
   height: 100%;
 }
+/* 
+#################
+#   UTILITIS    #
+#################
+*/
+.card-d-flax {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 /* CARD */
 .card {
   padding: 5px;
@@ -62,12 +72,7 @@ img {
   background-image: url("../img/mine.jpg");
   overflow-y: scroll;
 }
-#main-container .card:nth-child(3) {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-}
+
 /* 
 #################
 #     DEBUG     #

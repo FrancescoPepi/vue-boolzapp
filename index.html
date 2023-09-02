@@ -52,12 +52,31 @@
         <div class="col-4">
           <div class="row h-100 flex-column">
             <!-- MY PROFILO -->
-            <div class="card d-flex flex-row">
+            <div class="card card-d-flax">
               <div class="img-card">
+                <!-- IMG MY PERSONA -->
                 <img src="./img/avatar_io.jpg" alt="" />
               </div>
+              <!-- NOME MY PERSONA -->
               <div class="flex-grow-1">Sofia</div>
-              <div>ciao</div>
+              <!-- MENU MY PERSONA -->
+              <div>
+                <span class="px-2"
+                  ><i
+                    class="fa-solid fa-circle-notch"
+                    style="color: #838a8aff"
+                  ></i
+                ></span>
+                <span class="px-2"
+                  ><i class="fa-solid fa-message" style="color: #838a8aff"></i
+                ></span>
+                <span class="px-2">
+                  <i
+                    class="fa-solid fa-ellipsis-vertical"
+                    style="color: #838a8aff"
+                  ></i>
+                </span>
+              </div>
             </div>
             <!-- ACTIVE-NOTIFICATION -->
             <div id="active-notification" class="card"></div>
@@ -94,11 +113,40 @@
         <div id="main-container" class="col">
           <div class="row flex-column h-100">
             <!-- PROFILO INTERLOCUTORE -->
-            <div class="card"></div>
+            <div class="card card-d-flax">
+              <div class="img-card">
+                <!--  IMG CHAT ATTIVA -->
+                <img :src="contacts[0].avatar" alt="" />
+              </div>
+              <!-- NOME CHAT ATTIVA -->
+
+              <div class="flex-grow-1">
+                <p>{{contacts[0].name}}</p>
+                <p>{{contacts[0].name}}</p>
+              </div>
+              <!-- MENU CHAT ATTIVA -->
+              <div>
+                <span class="px-2"
+                  ><i
+                    class="fa-solid fa-magnifying-glass"
+                    style="color: #838a8aff"
+                  ></i
+                ></span>
+                <span class="px-2"
+                  ><i class="fa-solid fa-paperclip" style="color: #838a8aff"></i
+                ></span>
+                <span class="px-2">
+                  <i
+                    class="fa-solid fa-ellipsis-vertical"
+                    style="color: #838a8aff"
+                  ></i>
+                </span>
+              </div>
+            </div>
             <!-- MAIN CHAT -->
             <div class="card flex-grow-1"></div>
             <!-- BOTTOM -->
-            <div class="card">
+            <div class="card-d-flax text-center card">
               <!-- MICROFONO -->
               <div class="col-1">
                 <i
