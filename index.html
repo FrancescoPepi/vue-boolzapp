@@ -52,7 +52,13 @@
         <div class="col-4">
           <div class="row h-100 flex-column">
             <!-- MY PROFILO -->
-            <div class="card"></div>
+            <div class="card d-flex flex-row">
+              <div class="img-card">
+                <img src="./img/avatar_io.jpg" alt="" />
+              </div>
+              <div class="flex-grow-1">Sofia</div>
+              <div>ciao</div>
+            </div>
             <!-- ACTIVE-NOTIFICATION -->
             <div id="active-notification" class="card"></div>
             <!-- SEARCH -->
@@ -87,23 +93,21 @@
         <!-- BODY (CHAT) -->
         <div id="main-container" class="col">
           <div class="row flex-column h-100">
+            <!-- PROFILO INTERLOCUTORE -->
             <div class="card"></div>
+            <!-- MAIN CHAT -->
             <div class="card flex-grow-1"></div>
+            <!-- BOTTOM -->
             <div class="card">
+              <!-- MICROFONO -->
               <div class="col-1">
                 <i
                   class="fa-regular fa-face-smile"
                   style="color: #838a8aff"
                 ></i>
               </div>
+              <!-- INPUT DI TESTO -->
               <div class="col-10">
-                <!-- <div class="mx-3">
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="1"
-                  ></textarea>
-                </div> -->
                 <div class="">
                   <input
                     type="text"
@@ -113,6 +117,7 @@
                   />
                 </div>
               </div>
+              <!-- EMOJI -->
               <div class="col-1">
                 <i class="fa-solid fa-microphone" style="color: #838a8aff"></i>
               </div>
