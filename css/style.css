@@ -1,0 +1,69 @@
+/* 
+#################
+#   GENERICS    #
+#################
+*/
+.bg {
+  width: 100%;
+  height: 100vh;
+  padding: 25px 150px;
+  background-color: #d8dbd4ff;
+  box-shadow: inset 0px 116px 0 0 #009688ff;
+}
+/* CONTAINER CARD */
+.container-fluid > .row > [class*="col"] {
+  height: 100%;
+
+  border: 0.1px solid rgb(190, 190, 190);
+}
+/* CARD */
+.card {
+  --bs-card-border-width: 0;
+  min-height: 60px;
+  border-radius: 0;
+  background-color: #eaeaeaff;
+}
+
+#active-notification {
+  background-color: #8edafcff;
+}
+/* ? SEARCH */
+.input-group {
+  background-color: #ffffffff;
+}
+.input-group > * {
+  color: #b6b9bbff;
+  background-color: #ffffffff;
+  border-radius: 3px;
+}
+/* ? FRIENDS CONTAINER */
+#friends-container {
+  overflow-y: scroll;
+}
+#friends-container .card {
+  border-top: 0.1px solid #eaeaeaff;
+  background-color: #ffffffff;
+}
+#friends-container .card.active {
+  background-color: #eaeaeaff;
+}
+/* ? MAIN CONTAINER */
+#main-container .card:nth-child(2) {
+  background-image: url("../img/mine.jpg");
+  overflow-y: scroll;
+}
+#main-container .card:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+/* 
+#################
+#     DEBUG     #
+#################
+*/
+.debug [class*="col"] {
+  border: 1px dashed red;
+  min-height: 10px;
+}
