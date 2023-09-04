@@ -58,7 +58,9 @@
                 <img src="./img/avatar_io.jpg" alt="" />
               </div>
               <!-- NOME MY PERSONA -->
-              <div class="flex-grow-1">Sofia</div>
+              <div class="flex-grow-1">
+                <p class="my-0 mx-2">Sofia</p>
+              </div>
               <!-- MENU MY PERSONA -->
               <div>
                 <span class="px-2"
@@ -103,8 +105,25 @@
                 <div
                   v-for="(elemento,index) in contacts"
                   :class="(index==0)?'active':''"
-                  class="card"
-                ></div>
+                  class="card card-d-flax"
+                >
+                  <!-- PROFILO INTERLOCUTORE -->
+
+                  <div class="img-card">
+                    <!--  IMG CHAT ATTIVA -->
+                    <img :src="elemento.avatar" alt="" />
+                  </div>
+                  <!-- NOME CHAT ATTIVA -->
+
+                  <div class="flex-grow-1">
+                    <p class="my-0 mx-2">{{elemento.name}}</p>
+                    <p class="my-0 mx-2">{{elemento.messages[1].message}}</p>
+                  </div>
+                  <!-- ULTIMO ACCESSO CHAT -->
+                  <div>
+                    <p>{{elemento.messages[0].date}}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -121,8 +140,8 @@
               <!-- NOME CHAT ATTIVA -->
 
               <div class="flex-grow-1">
-                <p>{{contacts[0].name}}</p>
-                <p>{{contacts[0].name}}</p>
+                <p class="my-0 mx-2">{{contacts[0].name}}</p>
+                <p class="my-0 mx-2">{{contacts[0].name}}</p>
               </div>
               <!-- MENU CHAT ATTIVA -->
               <div>
@@ -144,7 +163,17 @@
               </div>
             </div>
             <!-- MAIN CHAT -->
-            <div class="card flex-grow-1"></div>
+            <div class="card flex-grow-1">
+              <!-- MESSAGE DA STAMPARE SU SCHERMO -->
+              <div
+                v-for="(message,index) in contacts[0].messages"
+                :class="message.status"
+                class="message"
+              >
+                <div>{{message.message}}</div>
+                <div>12:30</div>
+              </div>
+            </div>
             <!-- BOTTOM -->
             <div class="card-d-flax text-center card">
               <!-- MICROFONO -->

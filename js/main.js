@@ -4,20 +4,11 @@ createApp({
   data() {
     return {
       contacts,
-      message: "Hello Vue!",
+      ultimoMsg: contacts[0].messages[2].message,
+      ultimoAccess: contacts[0].messages[2].date,
+      messaggi: contacts[0].messages,
+      chatActive: 0,
     };
   },
   methods: {},
-  // created: {
-  //   addUaccess() {
-  //     contacts.forEach((element) => {
-  //       element.access = randomNumber();
-  //       console.log(contacts);
-  //     });
-  //   },
-  // },
 }).mount("#app");
-
-// function randomNumber() {
-//   Math.floor(Math.random() * (12 + 1) - 1);
-// }

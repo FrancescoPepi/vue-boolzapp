@@ -67,12 +67,43 @@ img {
 #friends-container .card.active {
   background-color: #eaeaeaff;
 }
+
+/* 
+#################
+#  CHAT ATTIVA  #
+#################
+*/
+
 /* ? MAIN CONTAINER */
 #main-container .card:nth-child(2) {
   background-image: url("../img/mine.jpg");
+  padding: 30px 70px;
+
   overflow-y: scroll;
+
+  align-items: flex-start;
 }
 
+.message {
+  padding: 5px 15px;
+  border-radius: 8px;
+  max-width: 60%;
+  min-width: 150px;
+}
+.message div:nth-child(2) {
+  color: rgb(162, 162, 162);
+  font-size: 10px;
+  text-align: right;
+}
+.sent {
+  margin-bottom: 10px;
+  background-color: #d5f9baff;
+  margin-left: auto;
+}
+
+.received {
+  background-color: white;
+}
 /* 
 #################
 #     DEBUG     #
