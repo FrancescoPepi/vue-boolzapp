@@ -82,7 +82,7 @@
             </div>
             <!-- ACTIVE-NOTIFICATION -->
             <div id="active-notification" class="card"></div>
-            <!-- SEARCH -->
+            <!-- SEARCH (SIDEBAR)-->
             <div class="input-group p-1">
               <span class="input-group-text px-4" id="basic-addon1">
                 <i
@@ -96,37 +96,76 @@
                 placeholder="Cerca o inizia una nuova chat"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                v-model="filterChat"
               />
             </div>
             <!-- CONTAINER CONTACTS SIDEBAR-->
             <div id="friends-container" class="col">
               <div class="row">
                 <!-- CONTACT SIDEBAR (CICLO) -->
+
+                <div v-for="(elemento,index) in contacts" class="p-0">
+                  <div
+                    v-show="(elemento.name.toLowerCase()).includes(filterChat.toLowerCase())"
+                    :class="(index==chatActive)?'active':''"
+                    @click="activeChat(index)"
+                    class="card card-d-flax"
+                  >
+                    <!-- PROFILO INTERLOCUTORE SIDEBAR -->
+
+                    <div class="img-card">
+                      <!--  IMG CHAT SIDEBAR -->
+                      <img :src="elemento.avatar" alt="" />
+                    </div>
+                    <!-- NOME CHAT SIDEBAR -->
+
+                    <div class="flex-grow-1">
+                      <p class="my-0 mx-2">{{elemento.name}}</p>
+                      <p class="my-0 mx-2">
+                        {{elemento.messages[elemento.messages.length-1].message}}
+                      </p>
+                    </div>
+                    <!-- ULTIMO ACCESSO CHAT SIDEBAR -->
+                    <div>
+                      <p>
+                        {{elemento.messages[elemento.messages.length-1].date}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+                <!-- RICERCA PAROLE IN CHAT -->
                 <div
                   v-for="(elemento,index) in contacts"
-                  :class="(index==chatActive)?'active':''"
-                  @click="activeChat(index)"
-                  class="card card-d-flax"
+                  class="p-0 opacity-50"
                 >
-                  <!-- PROFILO INTERLOCUTORE SIDEBAR -->
+                  <div
+                    v-show="(elemento.messages[elemento.messages.length-1].message.toLowerCase()).includes(filterChat.toLowerCase()) && (filterChat.length >4)"
+                    :class="(index==chatActive)?'active':''"
+                    @click="activeChat(index)"
+                    class="card card-d-flax"
+                  >
+                    <!-- PROFILO INTERLOCUTORE SIDEBAR -->
 
-                  <div class="img-card">
-                    <!--  IMG CHAT SIDEBAR -->
-                    <img :src="elemento.avatar" alt="" />
-                  </div>
-                  <!-- NOME CHAT SIDEBAR -->
+                    <div class="img-card">
+                      <!--  IMG CHAT SIDEBAR -->
+                      <img :src="elemento.avatar" alt="" />
+                    </div>
+                    <!-- NOME CHAT SIDEBAR -->
 
-                  <div class="flex-grow-1">
-                    <p class="my-0 mx-2">{{elemento.name}}</p>
-                    <p class="my-0 mx-2">
-                      {{elemento.messages[elemento.messages.length-1].message}}
-                    </p>
-                  </div>
-                  <!-- ULTIMO ACCESSO CHAT SIDEBAR -->
-                  <div>
-                    <p>
-                      {{elemento.messages[elemento.messages.length-1].date}}
-                    </p>
+                    <div class="flex-grow-1">
+                      <p class="my-0 mx-2">{{elemento.name}}</p>
+                      <p class="my-0 mx-2">
+                        {{elemento.messages[elemento.messages.length-1].message}}
+                      </p>
+                    </div>
+                    <!-- ULTIMO ACCESSO CHAT SIDEBAR -->
+                    <div>
+                      <p>
+                        {{elemento.messages[elemento.messages.length-1].date}}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

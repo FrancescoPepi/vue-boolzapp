@@ -8,6 +8,7 @@ createApp({
       ultimoAccess: contacts[0].messages[2].date,
       messaggi: contacts[0].messages,
       chatActive: 0,
+      filterChat: "",
     };
   },
   methods: {
