@@ -13,6 +13,9 @@ createApp({
         message: "",
         status: "sent",
       },
+      // ultimoAccess:
+      //   contacts[chatActive].messages[contacts[chatActive].messages.length - 1]
+      //     .date,
     };
   },
   methods: {
@@ -20,7 +23,7 @@ createApp({
       this.chatActive = index;
     },
     pushMessage() {
-      if (this.newMessage.message.length <= 2) {
+      if (this.newMessage.message <= 2) {
         console.log("errore");
         return;
       }
@@ -32,5 +35,10 @@ createApp({
       newMessageCopy.date = h + ":" + min;
       this.contacts[this.chatActive].messages.push(newMessageCopy);
     },
+    // provaX(x) {
+    //   if (x.date.length < 9 && x.status == "received") {
+    //     this.ultimoAccess = x.date;
+    //   }
+    // },
   },
 }).mount("#app");

@@ -186,6 +186,10 @@
                 <!-- NOME CHAT ATTIVA -->
                 <p class="my-0 mx-2">{{contacts[chatActive].name}}</p>
                 <!-- CONTROLLO ULTIMO ACCESSO -->
+                <!-- <p>
+                  {{provaX(contacts[chatActive].messages[contacts[chatActive].messages.length-1])}}
+                  {{ultimoAccess}}
+                </p> -->
                 <p
                   v-if="contacts[chatActive].messages[contacts[chatActive].messages.length-1].date.length > 9"
                   class="my-0 mx-2"
