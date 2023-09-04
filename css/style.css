@@ -58,6 +58,7 @@ img {
 }
 /* ? FRIENDS CONTAINER */
 #friends-container {
+  background-color: white;
   overflow-y: scroll;
 }
 #friends-container .card {
@@ -78,7 +79,7 @@ img {
 #main-container .card:nth-child(2) {
   background-image: url("../img/mine.jpg");
   padding: 30px 70px;
-
+  height: calc(100% - 130px);
   overflow-y: scroll;
 
   align-items: flex-start;

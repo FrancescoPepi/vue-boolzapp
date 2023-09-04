@@ -4,16 +4,33 @@ createApp({
   data() {
     return {
       contacts,
-      ultimoMsg: contacts[0].messages[2].message,
-      ultimoAccess: contacts[0].messages[2].date,
-      messaggi: contacts[0].messages,
+
       chatActive: 0,
       filterChat: "",
+      // messageInput: "",
+      newMessage: {
+        date: "",
+        message: "",
+        status: "sent",
+      },
     };
   },
   methods: {
     activeChat(index) {
       this.chatActive = index;
+    },
+    pushMessage() {
+      if (this.newMessage.message.length <= 2) {
+        console.log("errore");
+        return;
+      }
+      const newMessageCopy = { ...this.newMessage };
+      const date = new Date();
+      let h, min;
+      h = date.getHours();
+      min = date.getMinutes();
+      newMessageCopy.date = h + ":" + min;
+      this.contacts[this.chatActive].messages.push(newMessageCopy);
     },
   },
 }).mount("#app");

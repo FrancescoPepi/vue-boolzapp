@@ -134,8 +134,7 @@
                   </div>
                 </div>
 
-                <hr />
-                <!-- RICERCA PAROLE IN CHAT -->
+                <!-- RICERCA PAROLE IN CHAT SIDEBAR -->
                 <div
                   v-for="(elemento,index) in contacts"
                   class="p-0 opacity-50"
@@ -247,6 +246,8 @@
                     class="form-control"
                     id="chatText"
                     placeholder="Scrivi un messaggio"
+                    v-model="newMessage.message"
+                    @keyup.enter="pushMessage()"
                   />
                 </div>
               </div>
