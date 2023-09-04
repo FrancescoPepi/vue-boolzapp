@@ -10,5 +10,9 @@ createApp({
       chatActive: 0,
     };
   },
-  methods: {},
+  methods: {
+    activeChat(index) {
+      this.chatActive = index;
+    },
+  },
 }).mount("#app");
