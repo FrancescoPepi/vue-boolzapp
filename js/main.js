@@ -10,7 +10,7 @@ createApp({
       // messageInput: "",
       newMessage: {
         date: "",
-        message: "",
+        message: "".trim(),
         status: "sent",
       },
       // ultimoAccess:
@@ -34,6 +34,7 @@ createApp({
       min = date.getMinutes();
       newMessageCopy.date = h + ":" + min;
       this.contacts[this.chatActive].messages.push(newMessageCopy);
+      this.newMessage.message = "";
     },
     // provaX(x) {
     //   if (x.date.length < 9 && x.status == "received") {
