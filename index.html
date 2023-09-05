@@ -229,8 +229,67 @@
                 :class="message.status"
                 class="message"
               >
+                <!-- MESSAGGIO STAMPATO -->
                 <div>{{message.message}}</div>
-                <div>12:30</div>
+                <!-- ORA + MENU DROPDOWN -->
+                <div>
+                  <!-- MENU DROPDOWN -->
+                  <div
+                    class="dropdown"
+                    @mouseover="over(index)"
+                    @mouseleave="noOver(index)"
+                  >
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      style="color: #838a8aff"
+                    >
+                      <i
+                        id="preferiti"
+                        class="fa-regular fa-star d-none"
+                        style="color: #838a8aff"
+                      ></i>
+                      <i
+                        id="cestino"
+                        class="fa-regular fa-trash-can d-none"
+                        style="color: #838a8aff"
+                      ></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li @click="deleteMessage(index)">
+                        <a class="dropdown-item" href="#">
+                          <i
+                            class="fa-regular fa-trash-can"
+                            style="color: #838a8aff"
+                          ></i>
+                          Elimina</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i
+                            class="fa-regular fa-star"
+                            style="color: #838a8aff"
+                          ></i>
+                          Preferiti
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i
+                            class="fa-solid fa-copy"
+                            style="color: #838a8aff"
+                          ></i>
+                          Copia</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- ORARIO STAMPA MESSAGGIO CHAT -->
+                  {{message.date}}
+                </div>
               </div>
             </div>
             <!-- BOTTOM (CHAT ATTIVA)-->

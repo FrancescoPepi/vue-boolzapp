@@ -94,7 +94,9 @@ img {
 .message div:nth-child(2) {
   color: rgb(162, 162, 162);
   font-size: 10px;
-  text-align: right;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 .sent {
   margin-bottom: 10px;
