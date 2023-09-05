@@ -106,6 +106,7 @@
 
                 <div v-for="(elemento,index) in contacts" class="p-0">
                   <div
+                    id="sidebar"
                     v-show="(elemento.name.toLowerCase()).includes(filterChat.toLowerCase())"
                     :class="(index==chatActive)?'active':''"
                     @click="activeChat(index)"
@@ -234,11 +235,7 @@
                 <!-- ORA + MENU DROPDOWN -->
                 <div>
                   <!-- MENU DROPDOWN -->
-                  <div
-                    class="dropdown"
-                    @mouseover="over(index)"
-                    @mouseleave="noOver(index)"
-                  >
+                  <div class="dropdown">
                     <button
                       class="btn dropdown-toggle"
                       type="button"

@@ -5,6 +5,8 @@ createApp({
     return {
       contacts,
 
+      copyOver: false,
+      preferiteOver: false,
       chatActive: 0,
       filterChat: "",
       newMessage: {
@@ -71,20 +73,6 @@ createApp({
       newMessageReceivedCopy.date = h + ":" + min;
       // push nuovo messaggio in object
       this.contacts[this.chatActive].messages.push(newMessageReceivedCopy);
-    },
-    over(index) {
-      const cestino = document.querySelectorAll("#cestino");
-      const arrow = document.querySelectorAll(".btn");
-      cestino[index].classList.remove("d-none");
-      arrow[index].classList.remove("dropdown-toggle");
-      // console.log(cestino, index);
-    },
-    noOver(index) {
-      const cestino = document.querySelectorAll("#cestino");
-      const arrow = document.querySelectorAll(".btn");
-      cestino[index].classList.add("d-none");
-      arrow[index].classList.add("dropdown-toggle");
-      // console.log(cestino);
     },
     deleteMessage(index) {
       this.contacts[this.chatActive].messages.splice(index, 1);
