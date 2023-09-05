@@ -87,13 +87,17 @@ createApp({
       // console.log(cestino);
     },
     deleteMessage(index) {
-      let messageDelete = this.contacts[this.chatActive].messages.slice(
-        index,
-        this.contacts[this.chatActive].messages.length
-      );
-      console.log(messageDelete);
-      // messageDelete
-      console.log(this.contacts[this.chatActive].messages);
+      this.contacts[this.chatActive].messages.splice(index, 1);
+    },
+    preferiteMessage(index) {
+      const preferiti = document.querySelectorAll("#preferiti");
+      preferiti[index].classList.toggle("d-none");
+    },
+    copyMessage(index) {
+      const messageCopied =
+        this.contacts[this.chatActive].messages[index].message;
+      navigator.clipboard.writeText(messageCopied);
+      console.log(messageCopied);
     },
     // provaX(x) {
     //   if (x.date.length < 9 && x.status == "received") {

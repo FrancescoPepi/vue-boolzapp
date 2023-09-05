@@ -248,7 +248,7 @@
                     >
                       <i
                         id="preferiti"
-                        class="fa-regular fa-star d-none"
+                        class="fa-solid fa-star d-none"
                         style="color: #838a8aff"
                       ></i>
                       <i
@@ -267,7 +267,7 @@
                           Elimina</a
                         >
                       </li>
-                      <li>
+                      <li @click="preferiteMessage(index)">
                         <a class="dropdown-item" href="#">
                           <i
                             class="fa-regular fa-star"
@@ -276,7 +276,7 @@
                           Preferiti
                         </a>
                       </li>
-                      <li>
+                      <li @click="copyMessage(index)">
                         <a class="dropdown-item" href="#">
                           <i
                             class="fa-solid fa-copy"
